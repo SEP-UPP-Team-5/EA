@@ -568,53 +568,38 @@
       <displayName>Acme</displayName>
       <description>This group represents the acme department of the ACME organization</description>
     </group>
-    <group name="hr" parentPath="/acme">
+    <group name="Company">
+      <displayName>Company</displayName>
+    </group>
+    <group name="Human Resources" parentPath="/Company">
       <displayName>Human Resources</displayName>
-      <description>This group represents the human resources department of the ACME organization</description>
     </group>
-    <group name="finance" parentPath="/acme">
-      <displayName>Finance</displayName>
-      <description>This group represents the finance department of the ACME organization</description>
+    <group name="Boss" parentPath="/Company/Human Resources">
+      <displayName>Boss</displayName>
     </group>
-    <group name="it" parentPath="/acme">
-      <displayName>Infrastructure</displayName>
-      <description>This group represents the infrastructure department of the ACME organization</description>
+    <group name="Team member" parentPath="/Company/Human Resources">
+      <displayName>Team member</displayName>
     </group>
-    <group name="marketing" parentPath="/acme">
-      <displayName>Marketing</displayName>
-      <description>This group represents the marketing department of the ACME organization</description>
+    <group name="Project team" parentPath="/Company">
+      <displayName>Project team</displayName>
     </group>
-    <group name="production" parentPath="/acme">
-      <displayName>Production</displayName>
-      <description>This group represents the production department of the ACME organization</description>
+    <group name="Member" parentPath="/Company/Project team">
+      <displayName>Member</displayName>
     </group>
-    <group name="sales" parentPath="/acme">
-      <displayName>Sales</displayName>
-      <description>This group represents the sales department of the ACME organization</description>
+    <group name="Agency" parentPath="/acme">
+      <displayName>Agency</displayName>
     </group>
-    <group name="europe" parentPath="/acme/sales">
-      <displayName>Europe</displayName>
-      <description>This group represents the europe department of the ACME organization</description>
+    <group name="Human resources" parentPath="/acme/Agency">
+      <displayName>Human resources</displayName>
     </group>
-    <group name="asia" parentPath="/acme/sales">
-      <displayName>Asia</displayName>
-      <description>This group represents the asia department of the ACME organization</description>
+    <group name="Boss" parentPath="/acme/Agency/Human resources">
+      <displayName>Boss</displayName>
     </group>
-    <group name="latin_america" parentPath="/acme/sales">
-      <displayName>Latin America</displayName>
-      <description>This group represents the latin america department of the ACME organization</description>
+    <group name="Team member" parentPath="/acme/Agency/Human resources">
+      <displayName>Team member</displayName>
     </group>
-    <group name="north_america" parentPath="/acme/sales">
-      <displayName>North America</displayName>
-      <description>This group represents the north america department of the ACME organization</description>
-    </group>
-    <group name="rd" parentPath="/acme/production">
-      <displayName>Research &amp; Development</displayName>
-      <description>This group represents the research &amp; development department of the ACME organization</description>
-    </group>
-    <group name="services" parentPath="/acme/production">
-      <displayName>Services</displayName>
-      <description>This group represents the services department of the ACME organization</description>
+    <group name="Candidate" parentPath="/acme">
+      <displayName>Candidate</displayName>
     </group>
   </groups>
   <memberships>
@@ -625,123 +610,123 @@
     </membership>
     <membership>
       <userName>april.sanchez</userName>
-      <roleName>member</roleName>
-      <groupName>hr</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
     </membership>
     <membership>
       <userName>helen.kelly</userName>
-      <roleName>member</roleName>
-      <groupName>hr</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Member</groupName>
+      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>walter.bates</userName>
-      <roleName>member</roleName>
-      <groupName>hr</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>AgencyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>zachary.williamson</userName>
-      <roleName>member</roleName>
-      <groupName>finance</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>AgencyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>patrick.gardenier</userName>
-      <roleName>member</roleName>
-      <groupName>finance</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>AgencyEmployee</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>virginie.jomphe</userName>
-      <roleName>member</roleName>
-      <groupName>finance</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>AgencyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>thorsten.hartmann</userName>
-      <roleName>member</roleName>
-      <groupName>finance</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>AgencyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>jan.fisher</userName>
-      <roleName>member</roleName>
-      <groupName>it</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Member</groupName>
+      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>isabel.bleasdale</userName>
-      <roleName>member</roleName>
-      <groupName>marketing</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Member</groupName>
+      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>favio.riviera</userName>
-      <roleName>member</roleName>
-      <groupName>marketing</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
     </membership>
     <membership>
       <userName>michael.morrison</userName>
-      <roleName>member</roleName>
-      <groupName>production</groupName>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>marc.marseau</userName>
-      <roleName>member</roleName>
-      <groupName>rd</groupName>
-      <groupParentPath>/acme/production</groupParentPath>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>joseph.hovell</userName>
-      <roleName>member</roleName>
-      <groupName>rd</groupName>
-      <groupParentPath>/acme/production</groupParentPath>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>mauro.zetticci</userName>
-      <roleName>member</roleName>
-      <groupName>services</groupName>
-      <groupParentPath>/acme/production</groupParentPath>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>thomas.wallis</userName>
-      <roleName>member</roleName>
-      <groupName>services</groupName>
-      <groupParentPath>/acme/production</groupParentPath>
+      <roleName>AgencyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>daniela.angelo</userName>
-      <roleName>member</roleName>
-      <groupName>europe</groupName>
-      <groupParentPath>/acme/sales</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Team member</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
     </membership>
     <membership>
       <userName>misa.kumagai</userName>
-      <roleName>member</roleName>
-      <groupName>asia</groupName>
-      <groupParentPath>/acme/sales</groupParentPath>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>norio.yamazaki</userName>
-      <roleName>member</roleName>
-      <groupName>asia</groupName>
-      <groupParentPath>/acme/sales</groupParentPath>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>giovanna.almeida</userName>
-      <roleName>member</roleName>
-      <groupName>latin_america</groupName>
-      <groupParentPath>/acme/sales</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Member</groupName>
+      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>anthony.nichols</userName>
-      <roleName>member</roleName>
-      <groupName>north_america</groupName>
-      <groupParentPath>/acme/sales</groupParentPath>
+      <roleName>CompanyEmployee</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
     </membership>
   </memberships>
 </organization:Organization>
