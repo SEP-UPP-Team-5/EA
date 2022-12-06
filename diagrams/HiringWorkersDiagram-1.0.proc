@@ -24,7 +24,7 @@
           <expectedDuration xmi:type="expression:Expression" xmi:id="_po_a43U3Ee2K1ZykuQI6WA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <elements xmi:type="process:Lane" xmi:id="_IXLxAHU5Ee2K1ZykuQI6WA" name="Agency boss (team for companies)" actor="_iUGlAHVEEe2K1ZykuQI6WA">
+      <elements xmi:type="process:Lane" xmi:id="_IXLxAHU5Ee2K1ZykuQI6WA" name="Agency boss (Company cooperation team)" actor="_iUGlAHVEEe2K1ZykuQI6WA">
         <elements xmi:type="process:ServiceTask" xmi:id="_tTfIEHViEe2GVddTACZxIw" name="Insight into hiring request " outgoing="_wCsgUHViEe2GVddTACZxIw" incoming="_o5BrkHU5Ee2K1ZykuQI6WA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_aiayYnU5Ee2K1ZykuQI6WA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_aiayYXU5Ee2K1ZykuQI6WA" name="" content="" returnTypeFixed="true"/>
@@ -638,7 +638,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_sdKxpHVCEe2K1ZykuQI6WA" x="2" y="-14"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_sdKxoXVCEe2K1ZykuQI6WA" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sdKxonVCEe2K1ZykuQI6WA" points="[-22, -26, -4, 109]$[-22, -77, -4, 58]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sdKxonVCEe2K1ZykuQI6WA" points="[-22, -26, -3, 110]$[-22, -78, -3, 58]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sdLYsHVCEe2K1ZykuQI6WA" id="(1.0,0.6046511627906976)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sdLYsXVCEe2K1ZykuQI6WA" id="(0.525,0.03333333333333333)"/>
     </edges>
