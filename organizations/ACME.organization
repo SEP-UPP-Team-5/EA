@@ -601,6 +601,9 @@
     <group name="Candidate" parentPath="/acme">
       <displayName>Candidate</displayName>
     </group>
+    <group name="Company cooperation team" parentPath="/acme/Agency">
+      <displayName>Company cooperation team</displayName>
+    </group>
   </groups>
   <memberships>
     <membership>
