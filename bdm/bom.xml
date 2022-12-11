@@ -151,7 +151,6 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.HiringRequest">
             <fields>
-                <field type="STRING" length="255" name="id" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.HiringRequest" fetchType="LAZY" name="type" nullable="false" collection="false"/>
                 <field type="INTEGER" length="255" name="numberOfPeople" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.CompanyEmpoyee" fetchType="LAZY" name="requester" nullable="false" collection="false"/>
