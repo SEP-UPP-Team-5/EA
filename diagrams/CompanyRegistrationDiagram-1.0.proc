@@ -335,8 +335,7 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Gz4ecXY6Ee2FUrtyUzFvUg"/>
         <condition xmi:type="expression:Expression" xmi:id="_Gz4ecnY6Ee2FUrtyUzFvUg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <actors xmi:type="process:Actor" xmi:id="_Ar7iV3VJEe23T6M6C_DBLw" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
-      <actors xmi:type="process:Actor" xmi:id="_TFp5UHVOEe23T6M6C_DBLw" name="Company employee"/>
+      <actors xmi:type="process:Actor" xmi:id="_TFp5UHVOEe23T6M6C_DBLw" name="Company employee" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_SmJEEHVUEe23T6M6C_DBLw" name="Agency employee"/>
       <actors xmi:type="process:Actor" xmi:id="_W8s0oHVUEe23T6M6C_DBLw" name="Agency boss"/>
       <contract xmi:type="process:Contract" xmi:id="_Ar7iWHVJEe23T6M6C_DBLw"/>
