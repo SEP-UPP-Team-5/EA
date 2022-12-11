@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="ACME" description="The ACME organization is an example of a typical hierarchy. It can be used for development.">
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="EA" description="The ACME organization is an example of a typical hierarchy. It can be used for development.">
   <customUserInfoDefinitions/>
   <users>
     <user userName="william.jobs">
@@ -577,14 +577,8 @@
     <group name="Boss" parentPath="/Company/Human Resources">
       <displayName>Boss</displayName>
     </group>
-    <group name="Team member" parentPath="/Company/Human Resources">
-      <displayName>Team member</displayName>
-    </group>
     <group name="Project team" parentPath="/Company">
       <displayName>Project team</displayName>
-    </group>
-    <group name="Member" parentPath="/Company/Project team">
-      <displayName>Member</displayName>
     </group>
     <group name="Agency" parentPath="/acme">
       <displayName>Agency</displayName>
@@ -594,9 +588,6 @@
     </group>
     <group name="Boss" parentPath="/acme/Agency/Human resources">
       <displayName>Boss</displayName>
-    </group>
-    <group name="Team member" parentPath="/acme/Agency/Human resources">
-      <displayName>Team member</displayName>
     </group>
     <group name="Candidate" parentPath="/acme">
       <displayName>Candidate</displayName>
@@ -620,20 +611,14 @@
     <membership>
       <userName>helen.kelly</userName>
       <roleName>CompanyEmployee</roleName>
-      <groupName>Member</groupName>
-      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>walter.bates</userName>
       <roleName>AgencyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>zachary.williamson</userName>
       <roleName>AgencyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>patrick.gardenier</userName>
@@ -644,32 +629,22 @@
     <membership>
       <userName>virginie.jomphe</userName>
       <roleName>AgencyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>thorsten.hartmann</userName>
       <roleName>AgencyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>jan.fisher</userName>
       <roleName>CompanyEmployee</roleName>
-      <groupName>Member</groupName>
-      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>isabel.bleasdale</userName>
       <roleName>CompanyEmployee</roleName>
-      <groupName>Member</groupName>
-      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>favio.riviera</userName>
       <roleName>CompanyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/Company/Human Resources</groupParentPath>
     </membership>
     <membership>
       <userName>michael.morrison</userName>
@@ -698,14 +673,10 @@
     <membership>
       <userName>thomas.wallis</userName>
       <roleName>AgencyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/acme/Agency/Human resources</groupParentPath>
     </membership>
     <membership>
       <userName>daniela.angelo</userName>
       <roleName>CompanyEmployee</roleName>
-      <groupName>Team member</groupName>
-      <groupParentPath>/Company/Human Resources</groupParentPath>
     </membership>
     <membership>
       <userName>misa.kumagai</userName>
@@ -722,8 +693,6 @@
     <membership>
       <userName>giovanna.almeida</userName>
       <roleName>CompanyEmployee</roleName>
-      <groupName>Member</groupName>
-      <groupParentPath>/Company/Project team</groupParentPath>
     </membership>
     <membership>
       <userName>anthony.nichols</userName>
