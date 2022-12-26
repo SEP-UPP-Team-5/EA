@@ -12,22 +12,14 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ar7iRHVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ar7iRXVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ar7iRnVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_o5LpAIVSEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_o5MQEIVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5MQEYVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3IIVSEe22FOowRNlX3w" name="registrationRequestInput.id" content="     ?.id" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT"/>
-            <operator xmi:type="expression:Operator" xmi:id="_o5M3IoVSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setId">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
           <operations xmi:type="expression:Operation" xmi:id="_o5M3I4VSEe22FOowRNlX3w">
             <leftOperand xmi:type="expression:Expression" xmi:id="_o5M3JIVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3JYVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3JoVSEe22FOowRNlX3w" name="registrationRequestInput.company" content="if (!     ?.company) {&#xA;&#x9;return null&#xA;}&#xA;def companyVar = registrationRequest.company ?: new com.company.model.Company()&#xA;companyVar.id =      ?.company?.id&#xA;companyVar.name =      ?.company?.name&#xA;companyVar.username =      ?.company?.username&#xA;companyVar.password =      ?.company?.password&#xA;companyVar.address =      ?.company?.address&#xA;companyVar.pib =      ?.company?.pib&#xA;companyVar.foundingDate =      ?.company?.foundingDate&#xA;companyVar.email =      ?.company?.email&#xA;companyVar.telephoneNumber =      ?.company?.telephoneNumber&#xA;return companyVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Company">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3KIVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3KYVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3JoVSEe22FOowRNlX3w" name="registrationRequestInput.company" content="if (!     registrationRequestInput?.company) {&#xA;&#x9;return null&#xA;}&#xA;def companyVar = registrationRequest.company ?: new com.company.model.Company()&#xA;companyVar.id =      registrationRequestInput?.company?.id&#xA;companyVar.name =      registrationRequestInput?.company?.name&#xA;companyVar.username =      registrationRequestInput?.company?.username&#xA;companyVar.password =      registrationRequestInput?.company?.password&#xA;companyVar.address =      registrationRequestInput?.company?.address&#xA;companyVar.pib =      registrationRequestInput?.company?.pib&#xA;companyVar.foundingDate =      registrationRequestInput?.company?.foundingDate&#xA;companyVar.email =      registrationRequestInput?.company?.email&#xA;companyVar.telephoneNumber =      registrationRequestInput?.company?.telephoneNumber&#xA;return companyVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Company">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zD990IVZEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zD_L8IVZEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_zD_zAIVZEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_o5M3KoVSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setCompany">
               <inputTypes>com.company.model.Company</inputTypes>
@@ -37,7 +29,9 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_o5M3LIVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3LYVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3LoVSEe22FOowRNlX3w" name="registrationRequestInput.timeOfCreation" content="     ?.timeOfCreation" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.OffsetDateTime"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3LoVSEe22FOowRNlX3w" name="registrationRequestInput.timeOfCreation" content="registrationRequestInput?.timeOfCreation" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.OffsetDateTime">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_0KqgIIVZEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_o5M3MIVSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setTimeOfCreation">
               <inputTypes>java.time.OffsetDateTime</inputTypes>
             </operator>
@@ -53,15 +47,6 @@
               <inputTypes>java.util.List</inputTypes>
             </operator>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_o5M3OIVSEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_o5M3OYVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3OoVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3O4VSEe22FOowRNlX3w" name="registrationRequestInput.rejectionReason" content="     ?.rejectionReason" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT"/>
-            <operator xmi:type="expression:Operator" xmi:id="_o5M3PYVSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setRejectionReason">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
           <operations xmi:type="expression:Operation" xmi:id="_TNimsYVTEe22FOowRNlX3w">
             <leftOperand xmi:type="expression:Expression" xmi:id="_TNjNkIVTEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNkYVTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
@@ -71,30 +56,6 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_TNjNlIVTEe22FOowRNlX3w" type="JAVA_METHOD" expression="setId">
               <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_TNjNlYVTEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_TNjNloVTEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNl4VTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_TNjNmIVTEe22FOowRNlX3w" name="registrationRequestInput.company" content="if (!registrationRequestInput?.company) {&#xA;&#x9;return null&#xA;}&#xA;def companyVar = registrationRequest.company ?: new com.company.model.Company()&#xA;companyVar.id = registrationRequestInput?.company?.id&#xA;companyVar.name = registrationRequestInput?.company?.name&#xA;companyVar.username = registrationRequestInput?.company?.username&#xA;companyVar.password = registrationRequestInput?.company?.password&#xA;companyVar.address = registrationRequestInput?.company?.address&#xA;companyVar.pib = registrationRequestInput?.company?.pib&#xA;companyVar.foundingDate = registrationRequestInput?.company?.foundingDate&#xA;companyVar.email = registrationRequestInput?.company?.email&#xA;companyVar.telephoneNumber = registrationRequestInput?.company?.telephoneNumber&#xA;return companyVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Company">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_TNjNmYVTEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNmoVTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNm4VTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_TNjNnIVTEe22FOowRNlX3w" type="JAVA_METHOD" expression="setCompany">
-              <inputTypes>com.company.model.Company</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_TNjNnYVTEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_TNjNnoVTEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNn4VTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_TNjNoIVTEe22FOowRNlX3w" name="registrationRequestInput.timeOfCreation" content="registrationRequestInput?.timeOfCreation" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.OffsetDateTime">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_TNjNoYVTEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_TNjNooVTEe22FOowRNlX3w" type="JAVA_METHOD" expression="setTimeOfCreation">
-              <inputTypes>java.time.OffsetDateTime</inputTypes>
             </operator>
           </operations>
           <operations xmi:type="expression:Operation" xmi:id="_TNjNo4VTEe22FOowRNlX3w">
@@ -419,7 +380,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_02kZpnVPEe23T6M6C_DBLw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_02kZpXVPEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_6W5HSHVSEe23T6M6C_DBLw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_-7KnkIVUEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ8IVZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_6W5HR3VSEe23T6M6C_DBLw"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_6W5uUXVSEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -469,7 +430,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_EV0gmHY6Ee2FUrtyUzFvUg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_EV0gl3Y6Ee2FUrtyUzFvUg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_Gad45HY6Ee2FUrtyUzFvUg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_-7KnkYVUEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ8YVZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_Gad443Y6Ee2FUrtyUzFvUg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_Gad45nY6Ee2FUrtyUzFvUg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -496,7 +457,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_L8CZAHVTEe23T6M6C_DBLw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_L8Bx9nVTEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_dQ5zEHVTEe23T6M6C_DBLw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_-7KnkoVUEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ8oVZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_dQ5MCHVTEe23T6M6C_DBLw"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_dQ5zEnVTEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -541,7 +502,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_EtHU4IVREe22FOowRNlX3w" name="init_registrationRequest()" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.CompanyRegistrationRequest"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_Ar7iUHVJEe23T6M6C_DBLw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_-7Knk4VUEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ84VZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_Ar7iUnVJEe23T6M6C_DBLw">
         <targetForm xmi:type="expression:Expression" xmi:id="_Ar7iU3VJEe23T6M6C_DBLw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
