@@ -41,7 +41,7 @@
         <businessObject qualifiedName="com.company.model.CandidateRegistrationRequest">
             <fields>
                 <field type="STRING" length="255" name="id" nullable="false" collection="false"/>
-                <field type="OFFSETDATETIME" length="255" name="timeOfCreation" nullable="false" collection="false"/>
+                <field type="OFFSETDATETIME" length="255" name="timeOfCreation" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.AgencyEmployee" fetchType="LAZY" name="employeesForReview" nullable="true" collection="true"/>
                 <field type="INTEGER" length="255" name="numberOfInsights" nullable="true" collection="false"/>
                 <field type="INTEGER" length="255" name="numberOfAcceptance" nullable="true" collection="false"/>
