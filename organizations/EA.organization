@@ -547,6 +547,164 @@
       <enabled>true</enabled>
       <password encrypted="false">bpm</password>
     </user>
+    <user userName="candidate">
+      <firstName>Candidate</firstName>
+      <lastName>Candinski</lastName>
+      <title>Mr</title>
+      <jobTitle>Candidate</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.hr.boss">
+      <firstName>HR Boss</firstName>
+      <lastName>Company</lastName>
+      <title>Mr</title>
+      <jobTitle>HR Boss</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.hr">
+      <firstName>HR</firstName>
+      <lastName>Boss</lastName>
+      <title>Ms</title>
+      <jobTitle>HR team member</jobTitle>
+      <manager>company.hr.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.project.team">
+      <firstName>Project Team Member</firstName>
+      <lastName>Company</lastName>
+      <title>Ms</title>
+      <jobTitle>Project Team Member</jobTitle>
+      <manager>company.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.project.team.member2">
+      <firstName>Project Team Member 2</firstName>
+      <lastName>Company</lastName>
+      <title>Mr</title>
+      <jobTitle>Project Team Member</jobTitle>
+      <manager>company.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.project.team.member3">
+      <firstName>Project Team Member 3</firstName>
+      <lastName>Company</lastName>
+      <title>Ms</title>
+      <jobTitle>Project Team Member</jobTitle>
+      <manager>company.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.boss">
+      <firstName>Boss</firstName>
+      <lastName>Company</lastName>
+      <title>Ms</title>
+      <jobTitle>Boss</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.boss">
+      <firstName>Boss</firstName>
+      <lastName>Agency</lastName>
+      <title>Ms</title>
+      <jobTitle>Boss</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.hr">
+      <firstName>HR</firstName>
+      <lastName>Agency</lastName>
+      <title>Mr</title>
+      <jobTitle>HR team member</jobTitle>
+      <manager>agency.hr.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.hr.boss">
+      <firstName>HR Boss</firstName>
+      <lastName>Agency</lastName>
+      <title>Ms</title>
+      <jobTitle>HR boss</jobTitle>
+      <manager>agency.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.hr2">
+      <firstName>HR 2</firstName>
+      <lastName>Agency</lastName>
+      <title>Mr</title>
+      <jobTitle>HR Team Member</jobTitle>
+      <manager>agency.hr.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.candidate">
+      <firstName>Candidate</firstName>
+      <lastName>Agency</lastName>
+      <title>Ms</title>
+      <jobTitle>Candidate</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.cct">
+      <firstName>CCT Member</firstName>
+      <lastName>Agency</lastName>
+      <title>Mr</title>
+      <jobTitle>CCT Member</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="agency.cct.boss">
+      <firstName>CCT Boss</firstName>
+      <lastName>Agency</lastName>
+      <title>Mr</title>
+      <jobTitle>CCT Boss</jobTitle>
+      <manager>agency.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="User1">
+      <firstName>Guest</firstName>
+      <lastName>Guestic</lastName>
+      <title>Mr</title>
+      <jobTitle>Guest</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="Candidate">
@@ -557,6 +715,9 @@
     </role>
     <role name="Guest">
       <displayName>Guest</displayName>
+    </role>
+    <role name="Boss">
+      <displayName>Boss</displayName>
     </role>
   </roles>
   <groups>
@@ -726,6 +887,95 @@
       <roleName>Employee</roleName>
       <groupName>Boss</groupName>
       <groupParentPath>/Company/Human Resources</groupParentPath>
+    </membership>
+    <membership>
+      <userName>candidate</userName>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/Agency</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.hr.boss</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.hr</userName>
+      <roleName>Employee</roleName>
+      <groupName>Human Resources</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.project.team</userName>
+      <roleName>Employee</roleName>
+      <groupName>Project team</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.project.team.member2</userName>
+      <roleName>Employee</roleName>
+      <groupName>Project team</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.project.team.member3</userName>
+      <roleName>Employee</roleName>
+      <groupName>Project team</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.boss</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.boss</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Agency</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.hr</userName>
+      <roleName>Employee</roleName>
+      <groupName>Human resources</groupName>
+      <groupParentPath>/Agency</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.hr.boss</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Agency/Human resources</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.hr2</userName>
+      <roleName>Employee</roleName>
+      <groupName>Human resources</groupName>
+      <groupParentPath>/Agency</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.candidate</userName>
+      <roleName>Candidate</roleName>
+      <groupName>Candidate</groupName>
+      <groupParentPath>/Agency</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.cct</userName>
+      <roleName>Employee</roleName>
+      <groupName>Company cooperation team</groupName>
+      <groupParentPath>/Agency</groupParentPath>
+    </membership>
+    <membership>
+      <userName>agency.cct.boss</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Agency/Company cooperation team</groupParentPath>
+    </membership>
+    <membership>
+      <userName>User1</userName>
+      <roleName>Guest</roleName>
+      <groupName>Guest</groupName>
     </membership>
   </memberships>
 </organization:Organization>
