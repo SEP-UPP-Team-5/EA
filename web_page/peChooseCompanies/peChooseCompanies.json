@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "peChooseCompanies",
   "name" : "peChooseCompanies",
-  "lastUpdate" : 1672159350688,
+  "lastUpdate" : 1672162943510,
   "rows" : [
     [
       {
@@ -329,58 +329,65 @@
                               "lg" : 12
                             },
                             "propertyValues" : {
-                              "labelHidden" : {
+                              "cssClasses" : {
                                 "type" : "constant",
-                                "value" : true
+                                "value" : ""
                               },
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "labelPosition" : {
-                                "type" : "constant",
-                                "value" : "top"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "labelWidth" : {
-                                "type" : "constant",
-                                "value" : 0
-                              },
-                              "readOnly" : {
+                              "disabled" : {
                                 "type" : "constant",
                                 "value" : false
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
                               },
                               "label" : {
                                 "type" : "interpolation",
                                 "value" : ""
                               },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 0
+                              },
                               "placeholder" : {
-                                "type" : "constant"
+                                "type" : "interpolation"
                               },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "text"
+                              "availableValues" : {
+                                "type" : "expression",
+                                "value" : "companies"
                               },
-                              "dimension" : {
+                              "displayedKey" : {
                                 "type" : "constant",
-                                "value" : 12
+                                "value" : "name"
+                              },
+                              "returnedKey" : {
+                                "type" : "constant",
+                                "value" : "id"
                               },
                               "value" : {
                                 "type" : "variable",
                                 "value" : "$item"
-                              },
-                              "required" : {
-                                "type" : "constant",
-                                "value" : true
                               }
                             },
-                            "reference" : "51bdc8e2-33a7-440f-9bb3-ee538f8dad5f",
+                            "reference" : "c45783ab-355a-4910-a0e3-ed82d60d5797",
                             "hasValidationError" : false,
-                            "id" : "pbInput",
-                            "description" : ""
+                            "id" : "pbSelect"
                           },
                           {
                             "type" : "component",
@@ -751,6 +758,13 @@
       "type" : "url",
       "value" : [
         "../{{context.premiumEmployment_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "companies" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"findById [com.company.model.Company]\",\"businessObjectName\":\"Company\",\"query\":{\"name\":\"findById\",\"displayName\":\"findById\"},\"id\":\"com.company.model.Company\",\"filters\":[{\"name\":\"id\",\"type\":\"STRING\",\"collection\":false,\"value\":\"*\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
       ],
       "exposed" : false
     }

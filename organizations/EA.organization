@@ -713,6 +713,49 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
+    <user userName="company1">
+      <firstName>1</firstName>
+      <lastName>Company</lastName>
+      <manager>company.hr.boss</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.hr.boss2">
+      <firstName>HR Boss 2</firstName>
+      <lastName>Company</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.hr.boss3">
+      <firstName>HR Boss 3</firstName>
+      <lastName>Company</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company2">
+      <firstName>2</firstName>
+      <lastName>Company</lastName>
+      <manager>company.hr.boss2</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company3">
+      <firstName>3</firstName>
+      <lastName>Company</lastName>
+      <manager>company.hr.boss3</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="Candidate">
@@ -726,6 +769,9 @@
     </role>
     <role name="Boss">
       <displayName>Boss</displayName>
+    </role>
+    <role name="Company">
+      <displayName>Company</displayName>
     </role>
   </roles>
   <groups>
@@ -910,7 +956,7 @@
     </membership>
     <membership>
       <userName>company.hr</userName>
-      <roleName>Employee</roleName>
+      <roleName>Boss</roleName>
       <groupName>Human Resources</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
@@ -984,6 +1030,33 @@
       <userName>guest</userName>
       <roleName>Guest</roleName>
       <groupName>Guest</groupName>
+    </membership>
+    <membership>
+      <userName>company1</userName>
+      <roleName>Company</roleName>
+      <groupName>Company</groupName>
+    </membership>
+    <membership>
+      <userName>company.hr.boss2</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.hr.boss3</userName>
+      <roleName>Boss</roleName>
+      <groupName>Boss</groupName>
+      <groupParentPath>/Company/Human Resources</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company2</userName>
+      <roleName>Company</roleName>
+      <groupName>Company</groupName>
+    </membership>
+    <membership>
+      <userName>company3</userName>
+      <roleName>Company</roleName>
+      <groupName>Company</groupName>
     </membership>
   </memberships>
 </organization:Organization>
