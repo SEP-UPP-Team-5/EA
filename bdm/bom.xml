@@ -199,7 +199,7 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.PremiumEmployment">
             <fields>
-                <field type="LONG" length="255" name="agencyEmployeeId" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="agencyEmployeeId" nullable="true" collection="false"/>
                 <field type="LONG" length="255" name="companies" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>

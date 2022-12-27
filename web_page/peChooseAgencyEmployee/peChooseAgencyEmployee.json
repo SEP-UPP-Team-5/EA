@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "peChooseAgencyEmployee",
   "name" : "peChooseAgencyEmployee",
-  "lastUpdate" : 1672158955908,
+  "lastUpdate" : 1672169791217,
   "rows" : [
     [
       {
@@ -289,7 +289,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.agencyEmployeeSelectionInput.userId"
+                          "value" : "formInput.premiumEmploymentInput.agencyEmployeeId"
                         }
                       },
                       "reference" : "4629ede8-a378-437d-9bc9-e7afa241eaa2",
@@ -373,6 +373,27 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable"
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable"
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "6f95a325-3b2c-45d0-95fb-c872e1a38909",
