@@ -695,11 +695,19 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
-    <user userName="User1">
+    <user userName="guest">
       <firstName>Guest</firstName>
       <lastName>Guestic</lastName>
       <title>Mr</title>
       <jobTitle>Guest</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="User1">
+      <firstName>Guest</firstName>
+      <lastName>Guest2</lastName>
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
@@ -971,6 +979,11 @@
       <roleName>Boss</roleName>
       <groupName>Boss</groupName>
       <groupParentPath>/Agency/Company cooperation team</groupParentPath>
+    </membership>
+    <membership>
+      <userName>guest</userName>
+      <roleName>Guest</roleName>
+      <groupName>Guest</groupName>
     </membership>
     <membership>
       <userName>User1</userName>
