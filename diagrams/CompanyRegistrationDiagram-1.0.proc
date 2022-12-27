@@ -3,314 +3,29 @@
   <process:MainProcess xmi:id="_Ar5GAHVJEe23T6M6C_DBLw" name="CompanyRegistrationDiagram" bonitaModelVersion="7.12.0-004">
     <elements xmi:type="process:Pool" xmi:id="_Ar67MHVJEe23T6M6C_DBLw" name="Company Registration">
       <elements xmi:type="process:Lane" xmi:id="_Ar67MXVJEe23T6M6C_DBLw" name="Company employee" actor="_TFp5UHVOEe23T6M6C_DBLw">
-        <elements xmi:type="process:StartEvent" xmi:id="_Ar67MnVJEe23T6M6C_DBLw" name="Requesting for registration" outgoing="_Ar7iVHVJEe23T6M6C_DBLw">
+        <elements xmi:type="process:StartEvent" xmi:id="_Ar67MnVJEe23T6M6C_DBLw" name="Requesting for registration" outgoing="_Vfn_oIXcEe2k7LYndSsmlw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ar7iQHVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ar7iQXVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ar7iQnVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_Ar7iQ3VJEe23T6M6C_DBLw" name="Creating request and entering data for registration" outgoing="_VuPPsHVPEe23T6M6C_DBLw" incoming="_Ar7iVHVJEe23T6M6C_DBLw" overrideActorsOfTheLane="false">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ar7iRHVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ar7iRXVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_Ar7iRnVJEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_o5M3I4VSEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_o5M3JIVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3JYVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3JoVSEe22FOowRNlX3w" name="registrationRequestInput.company" content="if (!     registrationRequestInput?.company) {&#xA;&#x9;return null&#xA;}&#xA;def companyVar = registrationRequest.company ?: new com.company.model.Company()&#xA;companyVar.id =      registrationRequestInput?.company?.id&#xA;companyVar.name =      registrationRequestInput?.company?.name&#xA;companyVar.username =      registrationRequestInput?.company?.username&#xA;companyVar.password =      registrationRequestInput?.company?.password&#xA;companyVar.address =      registrationRequestInput?.company?.address&#xA;companyVar.pib =      registrationRequestInput?.company?.pib&#xA;companyVar.foundingDate =      registrationRequestInput?.company?.foundingDate&#xA;companyVar.email =      registrationRequestInput?.company?.email&#xA;companyVar.telephoneNumber =      registrationRequestInput?.company?.telephoneNumber&#xA;return companyVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Company">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zD990IVZEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zD_L8IVZEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_zD_zAIVZEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_o5M3KoVSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setCompany">
-              <inputTypes>com.company.model.Company</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_o5M3K4VSEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_o5M3LIVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3LYVSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3LoVSEe22FOowRNlX3w" name="registrationRequestInput.timeOfCreation" content="registrationRequestInput?.timeOfCreation" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.OffsetDateTime">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_0KqgIIVZEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_o5M3MIVSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setTimeOfCreation">
-              <inputTypes>java.time.OffsetDateTime</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_o5M3MYVSEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_o5M3MoVSEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o5M3M4VSEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_o5M3NIVSEe22FOowRNlX3w" name="registrationRequestInput.employeeForeReview" content="def agencyEmployeeList = []&#xA;//For each item collected in multiple input&#xA;     ?.employeeForeReview.each{&#xA;&#x9;//Add AgencyEmployee instance&#xA;&#x9;agencyEmployeeList.add({ currentAgencyEmployeeInput ->&#xA;&#x9;&#x9;def agencyEmployeeVar = agencyEmployeeDAO.findByPersistenceId(currentAgencyEmployeeInput.persistenceId_string?.trim() ? currentAgencyEmployeeInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;if(!agencyEmployeeVar) {&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `AgencyEmployee` with the persistence id &quot; + currentAgencyEmployeeInput.persistenceId_string?.trim() ? currentAgencyEmployeeInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return agencyEmployeeVar&#xA;&#x9;}(it))&#xA;}&#xA;return agencyEmployeeList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="expression:Expression" xmi:id="_o5M3NoVSEe22FOowRNlX3w" name="agencyEmployeeDAO" content="agencyEmployeeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.AgencyEmployeeDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_o5M3N4VSEe22FOowRNlX3w" type="JAVA_METHOD" expression="setEmployeeForeReview">
-              <inputTypes>java.util.List</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_TNimsYVTEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_TNjNkIVTEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNkYVTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_TNjNkoVTEe22FOowRNlX3w" name="registrationRequestInput.id" content="registrationRequestInput?.id" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_TNjNk4VTEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_TNjNlIVTEe22FOowRNlX3w" type="JAVA_METHOD" expression="setId">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_TNjNo4VTEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_TNjNpIVTEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNpYVTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_TNjNpoVTEe22FOowRNlX3w" name="registrationRequestInput.employeeForeReview" content="def agencyEmployeeList = []&#xA;//For each item collected in multiple input&#xA;registrationRequestInput?.employeeForeReview.each{&#xA;&#x9;//Add AgencyEmployee instance&#xA;&#x9;agencyEmployeeList.add({ currentAgencyEmployeeInput ->&#xA;&#x9;&#x9;def agencyEmployeeVar = agencyEmployeeDAO.findByPersistenceId(currentAgencyEmployeeInput.persistenceId_string?.trim() ? currentAgencyEmployeeInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;if(!agencyEmployeeVar) {&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `AgencyEmployee` with the persistence id &quot; + currentAgencyEmployeeInput.persistenceId_string?.trim() ? currentAgencyEmployeeInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;agencyEmployeeVar.employee = {&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated Employee using its DAO and persistenceId&#xA;&#x9;&#x9;&#x9;def employeeVar = employeeDAO.findByPersistenceId(currentAgencyEmployeeInput.employee?.persistenceId_string?.trim() ? currentAgencyEmployeeInput.employee.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;&#x9;if (!employeeVar) {&#xA;&#x9;&#x9;&#x9;&#x9;if (currentAgencyEmployeeInput.employee?.persistenceId_string?.trim() ? currentAgencyEmployeeInput.employee.persistenceId_string.toLong() : null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Employee` with the persistence id &quot; + currentAgencyEmployeeInput.employee?.persistenceId_string?.trim() ? currentAgencyEmployeeInput.employee.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;employeeVar.id = currentAgencyEmployeeInput.employee?.id&#xA;&#x9;&#x9;&#x9;employeeVar.name = currentAgencyEmployeeInput.employee?.name&#xA;&#x9;&#x9;&#x9;employeeVar.surname = currentAgencyEmployeeInput.employee?.surname&#xA;&#x9;&#x9;&#x9;employeeVar.username = currentAgencyEmployeeInput.employee?.username&#xA;&#x9;&#x9;&#x9;employeeVar.password = currentAgencyEmployeeInput.employee?.password&#xA;&#x9;&#x9;&#x9;employeeVar.email = currentAgencyEmployeeInput.employee?.email&#xA;&#x9;&#x9;&#x9;employeeVar.address = currentAgencyEmployeeInput.employee?.address&#xA;&#x9;&#x9;&#x9;employeeVar.telephoneNumber = currentAgencyEmployeeInput.employee?.telephoneNumber&#xA;&#x9;&#x9;&#x9;employeeVar.isBoss = currentAgencyEmployeeInput.employee?.isBoss&#xA;&#x9;&#x9;&#x9;return employeeVar}()&#xA;&#x9;&#x9;agencyEmployeeVar.teamType = {&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated AgencyTeamType using its DAO and persistenceId&#xA;&#x9;&#x9;&#x9;def agencyTeamTypeVar = agencyTeamTypeDAO.findByPersistenceId(currentAgencyEmployeeInput.teamType?.persistenceId_string?.trim() ? currentAgencyEmployeeInput.teamType.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;&#x9;if (!agencyTeamTypeVar) {&#xA;&#x9;&#x9;&#x9;&#x9;if (currentAgencyEmployeeInput.teamType?.persistenceId_string?.trim() ? currentAgencyEmployeeInput.teamType.persistenceId_string.toLong() : null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `AgencyTeamType` with the persistence id &quot; + currentAgencyEmployeeInput.teamType?.persistenceId_string?.trim() ? currentAgencyEmployeeInput.teamType.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;agencyTeamTypeVar.id = currentAgencyEmployeeInput.teamType?.id&#xA;&#x9;&#x9;&#x9;agencyTeamTypeVar.type = currentAgencyEmployeeInput.teamType?.type&#xA;&#x9;&#x9;&#x9;return agencyTeamTypeVar}()&#xA;&#x9;&#x9;agencyEmployeeVar.premiumCandidates = {&#xA;&#x9;&#x9;&#x9;def candidateList = []&#xA;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xA;&#x9;&#x9;&#x9;currentAgencyEmployeeInput.premiumCandidates.each{&#xA;&#x9;&#x9;&#x9;&#x9;//Add Candidate instance&#xA;&#x9;&#x9;&#x9;&#x9;candidateList.add({ currentCandidateInput ->&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def candidateVar = candidateDAO.findByPersistenceId(currentCandidateInput.persistenceId_string?.trim() ? currentCandidateInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(!candidateVar) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Candidate` with the persistence id &quot; + currentCandidateInput.persistenceId_string?.trim() ? currentCandidateInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.id = currentCandidateInput.id&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.name = currentCandidateInput.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.surname = currentCandidateInput.surname&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.username = currentCandidateInput.username&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.email = currentCandidateInput.email&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.address = currentCandidateInput.address&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.telephoneNumber = currentCandidateInput.telephoneNumber&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.educationList = {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def educationList = []&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;currentCandidateInput.educationList.each{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//Add Education instance&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationList.add({ currentEducationInput ->&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def educationVar = educationDAO.findByPersistenceId(currentEducationInput.persistenceId_string?.trim() ? currentEducationInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(!educationVar) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Education` with the persistence id &quot; + currentEducationInput.persistenceId_string?.trim() ? currentEducationInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.id = currentEducationInput.id&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.type = {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//Retrieve aggregated EducationType using its DAO and persistenceId&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def educationTypeVar = educationTypeDAO.findByPersistenceId(currentEducationInput.type?.persistenceId_string?.trim() ? currentEducationInput.type.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!educationTypeVar) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (currentEducationInput.type?.persistenceId_string?.trim() ? currentEducationInput.type.persistenceId_string.toLong() : null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `EducationType` with the persistence id &quot; + currentEducationInput.type?.persistenceId_string?.trim() ? currentEducationInput.type.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationTypeVar.id = currentEducationInput.type?.id&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationTypeVar.type = currentEducationInput.type?.type&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return educationTypeVar}()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.name = currentEducationInput.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.startDate = currentEducationInput.startDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.endDate = currentEducationInput.endDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.city = currentEducationInput.city&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;educationVar.country = currentEducationInput.country&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return educationVar&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}(it))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return educationList}()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.cvFile = currentCandidateInput.cvFile&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.letterFile = currentCandidateInput.letterFile&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;candidateVar.premiumService = currentCandidateInput.premiumService&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return candidateVar&#xA;&#x9;&#x9;&#x9;&#x9;}(it))&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;return candidateList}()&#xA;&#x9;&#x9;return agencyEmployeeVar&#xA;&#x9;}(it))&#xA;}&#xA;return agencyEmployeeList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_TNjNp4VTEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_TNjNqIVTEe22FOowRNlX3w" name="educationTypeDAO" content="educationTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.EducationTypeDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_TNjNqYVTEe22FOowRNlX3w" name="agencyTeamTypeDAO" content="agencyTeamTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.AgencyTeamTypeDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_TNjNqoVTEe22FOowRNlX3w" name="candidateDAO" content="candidateDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CandidateDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_TNjNq4VTEe22FOowRNlX3w" name="agencyEmployeeDAO" content="agencyEmployeeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.AgencyEmployeeDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_TNjNrIVTEe22FOowRNlX3w" name="educationDAO" content="educationDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.EducationDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_TNjNrYVTEe22FOowRNlX3w" name="employeeDAO" content="employeeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.EmployeeDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_TNjNroVTEe22FOowRNlX3w" type="JAVA_METHOD" expression="setEmployeeForeReview">
-              <inputTypes>java.util.List</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_TNjNr4VTEe22FOowRNlX3w">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_TNjNsIVTEe22FOowRNlX3w" name="registrationRequest" content="registrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CompanyRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TNjNsYVTEe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_TNjNsoVTEe22FOowRNlX3w" name="registrationRequestInput.rejectionReason" content="registrationRequestInput?.rejectionReason" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_TNjNs4VTEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_TNjNtIVTEe22FOowRNlX3w" type="JAVA_METHOD" expression="setRejectionReason">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <loopCondition xmi:type="expression:Expression" xmi:id="_Ar7iR3VJEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <loopMaximum xmi:type="expression:Expression" xmi:id="_Ar7iSHVJEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
-          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_Ar7iSXVJEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
-          <iteratorExpression xmi:type="expression:Expression" xmi:id="_Ar7iSnVJEe23T6M6C_DBLw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
-          <completionCondition xmi:type="expression:Expression" xmi:id="_Ar7iS3VJEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_Ar7iTHVJEe23T6M6C_DBLw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_WyzdAIVTEe22FOowRNlX3w" name="companyRegistration" content="792905ba-0bbe-48cc-be3f-2e90327d2400" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <elements xmi:type="process:Task" xmi:id="_YtKSoIXcEe2k7LYndSsmlw" name="Creating request and entering data for registration" outgoing="_ZltrQIXcEe2k7LYndSsmlw" incoming="_Vfn_oIXcEe2k7LYndSsmlw" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_RhCqMoXcEe2k7LYndSsmlw" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_RhCqMYXcEe2k7LYndSsmlw" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_RhCqM4XcEe2k7LYndSsmlw" name="" content="" returnTypeFixed="true"/>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_RhCqNIXcEe2k7LYndSsmlw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_RhCqNYXcEe2k7LYndSsmlw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_RhCqNoXcEe2k7LYndSsmlw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_RhCqOIXcEe2k7LYndSsmlw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_RhCqN4XcEe2k7LYndSsmlw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_YtKSqoXcEe2k7LYndSsmlw">
+            <targetForm xmi:type="expression:Expression" xmi:id="_YtKSq4XcEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_Ar7iTnVJEe23T6M6C_DBLw">
-            <inputs xmi:type="process:ContractInput" xmi:id="_TNgKQIVTEe22FOowRNlX3w" name="registrationRequestInput" type="COMPLEX" dataReference="registrationRequest" createMode="false">
-              <inputs xmi:type="process:ContractInput" xmi:id="_TNgKQYVTEe22FOowRNlX3w" name="id" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_TNgxUIVTEe22FOowRNlX3w" name="company" type="COMPLEX" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxUYVTEe22FOowRNlX3w" name="id" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxUoVTEe22FOowRNlX3w" name="name" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxU4VTEe22FOowRNlX3w" name="username" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxVIVTEe22FOowRNlX3w" name="password" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxVYVTEe22FOowRNlX3w" name="address" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxVoVTEe22FOowRNlX3w" name="pib" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxV4VTEe22FOowRNlX3w" name="foundingDate" type="LOCALDATE" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxWIVTEe22FOowRNlX3w" name="email" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxWYVTEe22FOowRNlX3w" name="telephoneNumber" createMode="false"/>
-              </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_TNgxWoVTEe22FOowRNlX3w" name="timeOfCreation" type="OFFSETDATETIME" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_TNgxW4VTEe22FOowRNlX3w" name="employeeForeReview" type="COMPLEX" multiple="true" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxXIVTEe22FOowRNlX3w" name="persistenceId_string" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxXYVTEe22FOowRNlX3w" name="employee" type="COMPLEX" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxXoVTEe22FOowRNlX3w" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxX4VTEe22FOowRNlX3w" name="id" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxYIVTEe22FOowRNlX3w" name="name" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxYYVTEe22FOowRNlX3w" name="surname" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxYoVTEe22FOowRNlX3w" name="username" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxY4VTEe22FOowRNlX3w" name="password" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxZIVTEe22FOowRNlX3w" name="email" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxZYVTEe22FOowRNlX3w" name="address" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxZoVTEe22FOowRNlX3w" name="telephoneNumber" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxZ4VTEe22FOowRNlX3w" name="isBoss" type="BOOLEAN" createMode="false"/>
-                </inputs>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxaIVTEe22FOowRNlX3w" name="teamType" type="COMPLEX" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxaYVTEe22FOowRNlX3w" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxaoVTEe22FOowRNlX3w" name="id" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxa4VTEe22FOowRNlX3w" name="type" createMode="false"/>
-                </inputs>
-                <inputs xmi:type="process:ContractInput" xmi:id="_TNgxbIVTEe22FOowRNlX3w" name="premiumCandidates" type="COMPLEX" multiple="true" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxbYVTEe22FOowRNlX3w" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxboVTEe22FOowRNlX3w" name="id" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxb4VTEe22FOowRNlX3w" name="name" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxcIVTEe22FOowRNlX3w" name="surname" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxcYVTEe22FOowRNlX3w" name="username" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxcoVTEe22FOowRNlX3w" name="email" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxc4VTEe22FOowRNlX3w" name="address" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxdIVTEe22FOowRNlX3w" name="telephoneNumber" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxdYVTEe22FOowRNlX3w" name="educationList" type="COMPLEX" multiple="true" createMode="false">
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxdoVTEe22FOowRNlX3w" name="persistenceId_string" createMode="false"/>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxd4VTEe22FOowRNlX3w" name="id" createMode="false"/>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxeIVTEe22FOowRNlX3w" name="type" type="COMPLEX" createMode="false">
-                      <inputs xmi:type="process:ContractInput" xmi:id="_TNgxeYVTEe22FOowRNlX3w" name="persistenceId_string" createMode="false"/>
-                      <inputs xmi:type="process:ContractInput" xmi:id="_TNgxeoVTEe22FOowRNlX3w" name="id" createMode="false"/>
-                      <inputs xmi:type="process:ContractInput" xmi:id="_TNgxe4VTEe22FOowRNlX3w" name="type" createMode="false"/>
-                    </inputs>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxfIVTEe22FOowRNlX3w" name="name" createMode="false"/>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxfYVTEe22FOowRNlX3w" name="startDate" type="LOCALDATE" createMode="false"/>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxfoVTEe22FOowRNlX3w" name="endDate" type="LOCALDATE" createMode="false"/>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxf4VTEe22FOowRNlX3w" name="city" createMode="false"/>
-                    <inputs xmi:type="process:ContractInput" xmi:id="_TNgxgIVTEe22FOowRNlX3w" name="country" createMode="false"/>
-                  </inputs>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxgYVTEe22FOowRNlX3w" name="cvFile" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxgoVTEe22FOowRNlX3w" name="letterFile" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_TNgxg4VTEe22FOowRNlX3w" name="premiumService" type="BOOLEAN" createMode="false"/>
-                </inputs>
-              </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_TNgxhIVTEe22FOowRNlX3w" name="rejectionReason" createMode="false"/>
-            </inputs>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimgIVTEe22FOowRNlX3w" expression="registrationRequestInput?.id != null" errorMessage="id is mandatory for CompanyRegistrationRequest" name="mandatory_registrationRequestInput_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimgYVTEe22FOowRNlX3w" expression="registrationRequestInput?.company != null" errorMessage="Company is mandatory for CompanyRegistrationRequest" name="mandatory_registrationRequestInput_company">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimgoVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.id != null" errorMessage="id is mandatory for Company" name="mandatory_registrationRequestInput_company_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimg4VTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.name != null" errorMessage="name is mandatory for Company" name="mandatory_registrationRequestInput_company_name">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimhIVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.username != null" errorMessage="username is mandatory for Company" name="mandatory_registrationRequestInput_company_username">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimhYVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.password != null" errorMessage="password is mandatory for Company" name="mandatory_registrationRequestInput_company_password">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimhoVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.address != null" errorMessage="address is mandatory for Company" name="mandatory_registrationRequestInput_company_address">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimh4VTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.pib != null" errorMessage="pib is mandatory for Company" name="mandatory_registrationRequestInput_company_pib">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimiIVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.foundingDate != null" errorMessage="foundingDate is mandatory for Company" name="mandatory_registrationRequestInput_company_foundingDate">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimiYVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.email != null" errorMessage="email is mandatory for Company" name="mandatory_registrationRequestInput_company_email">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimioVTEe22FOowRNlX3w" expression="registrationRequestInput?.company?.telephoneNumber != null" errorMessage="telephoneNumber is mandatory for Company" name="mandatory_registrationRequestInput_company_telephoneNumber">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimi4VTEe22FOowRNlX3w" expression="registrationRequestInput?.timeOfCreation != null" errorMessage="timeOfCreation is mandatory for CompanyRegistrationRequest" name="mandatory_registrationRequestInput_timeOfCreation">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimjIVTEe22FOowRNlX3w" expression="!registrationRequestInput?.employeeForeReview || registrationRequestInput?.employeeForeReview?.persistenceId_string" errorMessage="AgencyEmployee must reference an existing instance with a persistenceId for CompanyRegistrationRequest" name="aggregation_registrationRequestInput_employeeForeReview">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimjYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee.flatten().every{it!=null}" errorMessage="Employee is mandatory for AgencyEmployee" name="mandatory_registrationRequestInput_employeeForeReview_employee">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimjoVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee.flatten().every{!it || it.persistenceId_string}" errorMessage="Employee must reference an existing instance with a persistenceId for AgencyEmployee" name="aggregation_registrationRequestInput_employeeForeReview_employee">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimj4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.id.flatten().every{it!=null}" errorMessage="id is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimkIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_name">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimkYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.surname.flatten().every{it!=null}" errorMessage="surname is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_surname">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimkoVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.username.flatten().every{it!=null}" errorMessage="username is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_username">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimk4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.password.flatten().every{it!=null}" errorMessage="password is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_password">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimlIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.email.flatten().every{it!=null}" errorMessage="email is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_email">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimlYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.address.flatten().every{it!=null}" errorMessage="address is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_address">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimloVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.employee?.telephoneNumber.flatten().every{it!=null}" errorMessage="telephoneNumber is mandatory for Employee" name="mandatory_registrationRequestInput_employeeForeReview_employee_telephoneNumber">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNiml4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.teamType.flatten().every{it!=null}" errorMessage="AgencyTeamType is mandatory for AgencyEmployee" name="mandatory_registrationRequestInput_employeeForeReview_teamType">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimmIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.teamType.flatten().every{!it || it.persistenceId_string}" errorMessage="AgencyTeamType must reference an existing instance with a persistenceId for AgencyEmployee" name="aggregation_registrationRequestInput_employeeForeReview_teamType">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimmYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.teamType?.id.flatten().every{it!=null}" errorMessage="id is mandatory for AgencyTeamType" name="mandatory_registrationRequestInput_employeeForeReview_teamType_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimmoVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.teamType?.type.flatten().every{it!=null}" errorMessage="type is mandatory for AgencyTeamType" name="mandatory_registrationRequestInput_employeeForeReview_teamType_type">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimm4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates.flatten().every{!it || it.persistenceId_string}" errorMessage="Candidate must reference an existing instance with a persistenceId for AgencyEmployee" name="aggregation_registrationRequestInput_employeeForeReview_premiumCandidates">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimnIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.id.flatten().every{it!=null}" errorMessage="id is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimnYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_name">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimnoVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.surname.flatten().every{it!=null}" errorMessage="surname is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_surname">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimn4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.username.flatten().every{it!=null}" errorMessage="username is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_username">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimoIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.email.flatten().every{it!=null}" errorMessage="email is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_email">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimoYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.address.flatten().every{it!=null}" errorMessage="address is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_address">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimooVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.telephoneNumber.flatten().every{it!=null}" errorMessage="telephoneNumber is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_telephoneNumber">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimo4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList.flatten().every{!it || it.persistenceId_string}" errorMessage="Education must reference an existing instance with a persistenceId for Candidate" name="aggregation_registrationRequestInput_employeeForeReview_premiumCandidates_educationList">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimpIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.id.flatten().every{it!=null}" errorMessage="id is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimpYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.type.flatten().every{it!=null}" errorMessage="EducationType is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_type">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimpoVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EducationType must reference an existing instance with a persistenceId for Education" name="aggregation_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_type">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimp4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.type?.id.flatten().every{it!=null}" errorMessage="id is mandatory for EducationType" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_type_id">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimqIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.type?.type.flatten().every{it!=null}" errorMessage="type is mandatory for EducationType" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_type_type">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimqYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_name">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimqoVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.startDate.flatten().every{it!=null}" errorMessage="startDate is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_startDate">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimq4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.endDate.flatten().every{it!=null}" errorMessage="endDate is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_endDate">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimrIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.city.flatten().every{it!=null}" errorMessage="city is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_city">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimrYVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.educationList?.country.flatten().every{it!=null}" errorMessage="country is mandatory for Education" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_educationList_country">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimroVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.cvFile.flatten().every{it!=null}" errorMessage="cvFile is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_cvFile">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimr4VTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.letterFile.flatten().every{it!=null}" errorMessage="letterFile is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_letterFile">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_TNimsIVTEe22FOowRNlX3w" expression="registrationRequestInput?.employeeForeReview?.premiumCandidates?.premiumService.flatten().every{it!=null}" errorMessage="premiumService is mandatory for Candidate" name="mandatory_registrationRequestInput_employeeForeReview_premiumCandidates_premiumService">
-              <inputNames>registrationRequestInput</inputNames>
-            </constraints>
-          </contract>
-          <expectedDuration xmi:type="expression:Expression" xmi:id="_Ar7iT3VJEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+          <contract xmi:type="process:Contract" xmi:id="_YtKSqYXcEe2k7LYndSsmlw"/>
+          <expectedDuration xmi:type="expression:Expression" xmi:id="_YtKSrIXcEe2k7LYndSsmlw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="__yvowHVOEe23T6M6C_DBLw" name="Agency Boss (team for companies)" actor="_W8s0oHVUEe23T6M6C_DBLw">
-        <elements xmi:type="process:ServiceTask" xmi:id="_gyOhkHVPEe23T6M6C_DBLw" name="Insight into registration request" outgoing="_sE0QIHVPEe23T6M6C_DBLw" incoming="_VuPPsHVPEe23T6M6C_DBLw">
+        <elements xmi:type="process:ServiceTask" xmi:id="_gyOhkHVPEe23T6M6C_DBLw" name="Insight into registration request" outgoing="_sE0QIHVPEe23T6M6C_DBLw" incoming="_ZltrQIXcEe2k7LYndSsmlw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ug_ZcXVPEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ug_ZcHVPEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_UhAAgHVPEe23T6M6C_DBLw" name="" content="" returnTypeFixed="true"/>
@@ -380,7 +95,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_02kZpnVPEe23T6M6C_DBLw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_02kZpXVPEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_6W5HSHVSEe23T6M6C_DBLw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ8IVZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_MngIYYXcEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_6W5HR3VSEe23T6M6C_DBLw"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_6W5uUXVSEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -430,7 +145,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_EV0gmHY6Ee2FUrtyUzFvUg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_EV0gl3Y6Ee2FUrtyUzFvUg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_Gad45HY6Ee2FUrtyUzFvUg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ8YVZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_MngIYoXcEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_Gad443Y6Ee2FUrtyUzFvUg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_Gad45nY6Ee2FUrtyUzFvUg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -457,7 +172,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_L8CZAHVTEe23T6M6C_DBLw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_L8Bx9nVTEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_dQ5zEHVTEe23T6M6C_DBLw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ8oVZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_MngIY4XcEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_dQ5MCHVTEe23T6M6C_DBLw"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_dQ5zEnVTEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -498,23 +213,12 @@
           <stepSummary xmi:type="expression:Expression" xmi:id="_rToTcXYCEe2_3bVWu97x1Q" name="" content="" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <data xmi:type="process:BusinessObjectData" xmi:id="_EtFfsIVREe22FOowRNlX3w" name="registrationRequest" dataType="_Ar7icHVJEe23T6M6C_DBLw" className="com.company.model.CompanyRegistrationRequest">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_EtHU4IVREe22FOowRNlX3w" name="init_registrationRequest()" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.CompanyRegistrationRequest"/>
-      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_Ar7iUHVJEe23T6M6C_DBLw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_LcIQ84VZEe22FOowRNlX3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_MngIZIXcEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_Ar7iUnVJEe23T6M6C_DBLw">
         <targetForm xmi:type="expression:Expression" xmi:id="_Ar7iU3VJEe23T6M6C_DBLw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_Ar7iVHVJEe23T6M6C_DBLw" target="_Ar7iQ3VJEe23T6M6C_DBLw" source="_Ar67MnVJEe23T6M6C_DBLw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Ar7iVXVJEe23T6M6C_DBLw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_Ar7iVnVJEe23T6M6C_DBLw" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_VuPPsHVPEe23T6M6C_DBLw" target="_gyOhkHVPEe23T6M6C_DBLw" source="_Ar7iQ3VJEe23T6M6C_DBLw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_VuRr8HVPEe23T6M6C_DBLw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_VuRr8XVPEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_sE0QIHVPEe23T6M6C_DBLw" target="_j3aw4HVPEe23T6M6C_DBLw" source="_gyOhkHVPEe23T6M6C_DBLw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_sE6WwHVPEe23T6M6C_DBLw"/>
         <condition xmi:type="expression:Expression" xmi:id="_sE690HVPEe23T6M6C_DBLw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -623,6 +327,14 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Gz4ecXY6Ee2FUrtyUzFvUg"/>
         <condition xmi:type="expression:Expression" xmi:id="_Gz4ecnY6Ee2FUrtyUzFvUg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_Vfn_oIXcEe2k7LYndSsmlw" target="_YtKSoIXcEe2k7LYndSsmlw" source="_Ar67MnVJEe23T6M6C_DBLw">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Vfn_oYXcEe2k7LYndSsmlw"/>
+        <condition xmi:type="expression:Expression" xmi:id="_Vfn_ooXcEe2k7LYndSsmlw" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_ZltrQIXcEe2k7LYndSsmlw" target="_gyOhkHVPEe23T6M6C_DBLw" source="_YtKSoIXcEe2k7LYndSsmlw">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_ZluSUIXcEe2k7LYndSsmlw"/>
+        <condition xmi:type="expression:Expression" xmi:id="_ZluSUYXcEe2k7LYndSsmlw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
       <actors xmi:type="process:Actor" xmi:id="_TFp5UHVOEe23T6M6C_DBLw" name="Company employee" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_SmJEEHVUEe23T6M6C_DBLw" name="Agency employee"/>
       <actors xmi:type="process:Actor" xmi:id="_W8s0oHVUEe23T6M6C_DBLw" name="Agency boss"/>
@@ -665,15 +377,15 @@
         <children xmi:type="notation:Node" xmi:id="_Ar8wYnVJEe23T6M6C_DBLw" type="3007" element="_Ar67MXVJEe23T6M6C_DBLw">
           <children xmi:type="notation:DecorationNode" xmi:id="_Ar8wY3VJEe23T6M6C_DBLw" type="5007"/>
           <children xmi:type="notation:DecorationNode" xmi:id="_Ar8wZHVJEe23T6M6C_DBLw" type="7002">
-            <children xmi:type="notation:Shape" xmi:id="_Ar8wZXVJEe23T6M6C_DBLw" type="3005" element="_Ar7iQ3VJEe23T6M6C_DBLw" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
-              <children xmi:type="notation:DecorationNode" xmi:id="_Ar8wZnVJEe23T6M6C_DBLw" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ar8wZ3VJEe23T6M6C_DBLw" x="160" y="60" width="140" height="70"/>
-            </children>
             <children xmi:type="notation:Shape" xmi:id="_Ar8waHVJEe23T6M6C_DBLw" type="3002" element="_Ar67MnVJEe23T6M6C_DBLw" fontName=".AppleSystemUIFont">
               <children xmi:type="notation:DecorationNode" xmi:id="_Ar8waXVJEe23T6M6C_DBLw" type="5024">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_Ar8wanVJEe23T6M6C_DBLw" y="5"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ar8wa3VJEe23T6M6C_DBLw" x="77" y="68"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_YtK5sIXcEe2k7LYndSsmlw" type="3005" element="_YtKSoIXcEe2k7LYndSsmlw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_YtK5soXcEe2k7LYndSsmlw" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YtK5sYXcEe2k7LYndSsmlw" x="257" y="58" width="140" height="70"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_Ar8wbHVJEe23T6M6C_DBLw"/>
@@ -818,22 +530,6 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ar9XcnVJEe23T6M6C_DBLw" width="1406" height="250"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_Ar9Xc3VJEe23T6M6C_DBLw"/>
-    <edges xmi:type="notation:Connector" xmi:id="_Ar9XdHVJEe23T6M6C_DBLw" type="4001" element="_Ar7iVHVJEe23T6M6C_DBLw" source="_Ar8waHVJEe23T6M6C_DBLw" target="_Ar8wZXVJEe23T6M6C_DBLw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Ar9XdXVJEe23T6M6C_DBLw" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Ar9XdnVJEe23T6M6C_DBLw" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_Ar9Xd3VJEe23T6M6C_DBLw" fontName=".AppleSystemUIFont"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ar9XeHVJEe23T6M6C_DBLw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_VuVWUHVPEe23T6M6C_DBLw" type="4001" element="_VuPPsHVPEe23T6M6C_DBLw" source="_Ar8wZXVJEe23T6M6C_DBLw" target="_gyWdYHVPEe23T6M6C_DBLw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_VuXLgHVPEe23T6M6C_DBLw" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_VuXLgXVPEe23T6M6C_DBLw" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_VuVWUXVPEe23T6M6C_DBLw" fontName=".AppleSystemUIFont"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VuVWUnVPEe23T6M6C_DBLw" points="[-97, 40, 55, -259]$[-97, 146, 55, -153]$[-111, 146, 41, -153]$[-111, 298, 41, -1]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Vug8gHVPEe23T6M6C_DBLw" id="(1.0,0.42857142857142855)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Vug8gXVPEe23T6M6C_DBLw" id="(0.48,0.02)"/>
-    </edges>
     <edges xmi:type="notation:Connector" xmi:id="_sFDgsHVPEe23T6M6C_DBLw" type="4001" element="_sE0QIHVPEe23T6M6C_DBLw" source="_gyWdYHVPEe23T6M6C_DBLw" target="_j3issHVPEe23T6M6C_DBLw" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_sFGkAHVPEe23T6M6C_DBLw" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_sFHLEHVPEe23T6M6C_DBLw" y="-10"/>
@@ -1061,6 +757,23 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_Gz4edHY6Ee2FUrtyUzFvUg" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Gz4edXY6Ee2FUrtyUzFvUg" points="[0, -9, -111, 0]$[61, -9, -50, 0]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Gz5skHY6Ee2FUrtyUzFvUg" id="(1.0,0.58)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_VfomsIXcEe2k7LYndSsmlw" type="4001" element="_Vfn_oIXcEe2k7LYndSsmlw" source="_Ar8waHVJEe23T6M6C_DBLw" target="_YtK5sIXcEe2k7LYndSsmlw" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Vfoms4XcEe2k7LYndSsmlw" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VfomtIXcEe2k7LYndSsmlw" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_VfomsYXcEe2k7LYndSsmlw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VfomsoXcEe2k7LYndSsmlw" points="[-7, 0, -165, 0]$[150, 0, -8, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Vfp00IXcEe2k7LYndSsmlw" id="(1.0,0.9)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Vfp00YXcEe2k7LYndSsmlw" id="(0.05714285714285714,0.5285714285714286)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ZluSUoXcEe2k7LYndSsmlw" type="4001" element="_ZltrQIXcEe2k7LYndSsmlw" source="_YtK5sIXcEe2k7LYndSsmlw" target="_gyWdYHVPEe23T6M6C_DBLw" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZluSVYXcEe2k7LYndSsmlw" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZluSVoXcEe2k7LYndSsmlw" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ZluSU4XcEe2k7LYndSsmlw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZluSVIXcEe2k7LYndSsmlw" points="[-24, 38, 180, -290]$[-207, 358, -3, 30]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZlvgcIXcEe2k7LYndSsmlw" id="(1.0,0.45714285714285713)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
