@@ -695,7 +695,7 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
-    <user userName="User1">
+    <user userName="guest">
       <firstName>Guest</firstName>
       <lastName>Guestic</lastName>
       <title>Mr</title>
@@ -973,7 +973,7 @@
       <groupParentPath>/Agency/Company cooperation team</groupParentPath>
     </membership>
     <membership>
-      <userName>User1</userName>
+      <userName>guest</userName>
       <roleName>Guest</roleName>
       <groupName>Guest</groupName>
     </membership>
