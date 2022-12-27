@@ -56,6 +56,7 @@
                 <field type="STRING" length="255" name="cvFile" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="letterFile" nullable="true" collection="false"/>
                 <field type="BOOLEAN" length="255" name="premiumService" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="approved" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
