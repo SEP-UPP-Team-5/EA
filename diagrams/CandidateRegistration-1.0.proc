@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_GYwzUHV3Ee25lfJWSkzKNQ" name="CandidateRegistration" bonitaModelVersion="7.12.0-004">
     <elements xmi:type="process:Pool" xmi:id="_GYwzUXV3Ee25lfJWSkzKNQ" name="CandidateRegistration">
       <elements xmi:type="process:Lane" xmi:id="_GYwzUnV3Ee25lfJWSkzKNQ" name="Candidate " actor="_N7W58IX9Ee2k7LYndSsmlw">
@@ -178,36 +178,77 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_JU4M6HV8Ee25lfJWSkzKNQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_JU4M53V8Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_UAnW2nV8Ee25lfJWSkzKNQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="__Kf4cIYiEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_OL3rQIY2Ee2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_UAnW2XV8Ee25lfJWSkzKNQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_UAnW3HV8Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_YuzhEHV4Ee25lfJWSkzKNQ" name="Agency employee " actor="_wZpwUHV5Ee25lfJWSkzKNQ">
-        <elements xmi:type="process:Task" xmi:id="_2TjYYHV4Ee25lfJWSkzKNQ" name="Reviewing registration request" outgoing="_yyxFkIYIEe2k7LYndSsmlw" incoming="_zMPCIHV4Ee25lfJWSkzKNQ" type="PARALLEL" useCardinality="true" storeOutput="true" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_2TjYYHV4Ee25lfJWSkzKNQ" name="Reviewing registration request" outgoing="_yyxFkIYIEe2k7LYndSsmlw" incoming="_zMPCIHV4Ee25lfJWSkzKNQ" type="PARALLEL" useCardinality="true" listDataContainingOutputResults="_cfVnUIYqEe2k7LYndSsmlw" storeOutput="true" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_zLQxwXV4Ee25lfJWSkzKNQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_zLQxwHV4Ee25lfJWSkzKNQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_zLQxwnV4Ee25lfJWSkzKNQ" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_XIoM4oYgEe2k7LYndSsmlw">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_XIoM44YgEe2k7LYndSsmlw" name="candidateRegistrationRequest" content="candidateRegistrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CandidateRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_XIoM5IYgEe2k7LYndSsmlw" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest"/>
+          <data xmi:type="process:Data" xmi:id="_aS3uwIY1Ee2k7LYndSsmlw" name="numberOfInsights" dataType="_GYwzfnV3Ee25lfJWSkzKNQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_aS3uwYY1Ee2k7LYndSsmlw" content="" returnType="java.lang.Integer"/>
+          </data>
+          <connectors xmi:type="process:Connector" xmi:id="_Lbt30IY2Ee2k7LYndSsmlw" name="CandidateRegistrationRequest" definitionId="scripting-groovy-script" event="ON_FINISH" throwErrorEvent="true" namedError="Throw error event" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_Lbt30YY2Ee2k7LYndSsmlw" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Lbt30oY2Ee2k7LYndSsmlw" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_Lbt304Y2Ee2k7LYndSsmlw" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Lbt31IY2Ee2k7LYndSsmlw" key="variables">
+                <expression xmi:type="expression:Expression" xmi:id="_Lbt31YY2Ee2k7LYndSsmlw" returnType="java.util.List" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Lbt31oY2Ee2k7LYndSsmlw" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_Lbt314Y2Ee2k7LYndSsmlw" name="newScript()" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xD;&#xA;&#xD;&#xA;import com.company.model.CandidateRegistrationRequest&#xD;&#xA;&#xD;&#xA;def request = new CandidateRegistrationRequest()&#xD;&#xA;try{&#xD;&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xD;&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xD;&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xD;&#xA;&#x9;request.username = processInitiator.userName&#xD;&#xA;}catch(UserNotFoundException e){&#xD;&#xA;&#x9;// Handle UserNotFoundException here&#xD;&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xD;&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xD;&#xA;}&#xD;&#xA;return request&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Lbt32IY2Ee2k7LYndSsmlw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Lbt32YY2Ee2k7LYndSsmlw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_Lbt32oY2Ee2k7LYndSsmlw">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_Lbt324Y2Ee2k7LYndSsmlw" name="multiInstanceIterator" content="multiInstanceIterator" type="TYPE_VARIABLE" returnType="java.lang.Object">
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Lbt33IY2Ee2k7LYndSsmlw" name="multiInstanceIterator" dataType="_GYwzgnV3Ee25lfJWSkzKNQ" className="java.lang.Object"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_Lbt33YY2Ee2k7LYndSsmlw" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_Lbt33oY2Ee2k7LYndSsmlw" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_Lbt334Y2Ee2k7LYndSsmlw" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_rLNvcIY2Ee2k7LYndSsmlw" name="numberOfInsights" definitionId="scripting-groovy-script" event="ON_FINISH" throwErrorEvent="true" namedError="Throw error event" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_rLNvcYY2Ee2k7LYndSsmlw" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_rLNvcoY2Ee2k7LYndSsmlw" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_rLNvc4Y2Ee2k7LYndSsmlw" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_rLNvdIY2Ee2k7LYndSsmlw" key="variables">
+                <expression xmi:type="expression:Expression" xmi:id="_rLNvdYY2Ee2k7LYndSsmlw" returnType="java.util.List" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_rLNvdoY2Ee2k7LYndSsmlw" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_rLNvd4Y2Ee2k7LYndSsmlw" name="newScript()" content="candidateRegistrationRequest.numberOfInsights++" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rLNveIY2Ee2k7LYndSsmlw" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_rLNveYY2Ee2k7LYndSsmlw">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_rLNveoY2Ee2k7LYndSsmlw" name="multiInstanceIterator" content="multiInstanceIterator" type="TYPE_VARIABLE" returnType="java.lang.Object">
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_rLNve4Y2Ee2k7LYndSsmlw" name="multiInstanceIterator" dataType="_GYwzgnV3Ee25lfJWSkzKNQ" className="java.lang.Object"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_rLNvfIY2Ee2k7LYndSsmlw" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_rLNvfYY2Ee2k7LYndSsmlw" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_rLNvfoY2Ee2k7LYndSsmlw" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_NbX_QIYyEe2k7LYndSsmlw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_NbX_QYYyEe2k7LYndSsmlw" name="candidateRegistrationRequest" content="candidateRegistrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CandidateRegistrationRequest">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_NbX_QoYyEe2k7LYndSsmlw" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_XIoM5YYgEe2k7LYndSsmlw" name="candidateRegistrationRequestInput.approved" content="candidateRegistrationRequestInput?.approved" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_XIoM5oYgEe2k7LYndSsmlw" name="candidateRegistrationRequestInput" type="COMPLEX" createMode="false"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_NbX_Q4YyEe2k7LYndSsmlw" name="candidateRegistrationRequestReviewInput.approved" content="candidateRegistrationRequestReviewInput?.approved" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_NbX_RIYyEe2k7LYndSsmlw" name="candidateRegistrationRequestReviewInput" type="COMPLEX" createMode="false"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_XIoM54YgEe2k7LYndSsmlw" type="JAVA_METHOD" expression="setApproved">
-              <inputTypes>java.lang.Boolean</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_3OQskoYgEe2k7LYndSsmlw">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_3OQsk4YgEe2k7LYndSsmlw" name="candidateRegistrationRequest" content="candidateRegistrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CandidateRegistrationRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3OQslIYgEe2k7LYndSsmlw" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_3OQslYYgEe2k7LYndSsmlw" name="candidateRegistrationRequestReviewInput.approved" content="candidateRegistrationRequestReviewInput?.approved" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_3OQsloYgEe2k7LYndSsmlw" name="candidateRegistrationRequestReviewInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_3OQsl4YgEe2k7LYndSsmlw" type="JAVA_METHOD" expression="setApproved">
+            <operator xmi:type="expression:Operator" xmi:id="_NbX_RYYyEe2k7LYndSsmlw" type="JAVA_METHOD" expression="setApproved">
               <inputTypes>java.lang.Boolean</inputTypes>
             </operator>
           </operations>
@@ -223,11 +264,8 @@
             <targetForm xmi:type="expression:Expression" xmi:id="_489qEIYgEe2k7LYndSsmlw" name="CandidateRegistrationRequestReview" content="89fa2451-b935-4852-b19f-56044fd5180a" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_2TjYaXV4Ee25lfJWSkzKNQ">
-            <inputs xmi:type="process:ContractInput" xmi:id="_XIoM4IYgEe2k7LYndSsmlw" name="candidateRegistrationRequestInput" type="COMPLEX" dataReference="candidateRegistrationRequest" createMode="false">
-              <inputs xmi:type="process:ContractInput" xmi:id="_XIoM4YYgEe2k7LYndSsmlw" name="approved" type="BOOLEAN" createMode="false"/>
-            </inputs>
-            <inputs xmi:type="process:ContractInput" xmi:id="_3OQskIYgEe2k7LYndSsmlw" name="candidateRegistrationRequestReviewInput" type="COMPLEX" dataReference="candidateRegistrationRequest" createMode="false">
-              <inputs xmi:type="process:ContractInput" xmi:id="_3OQskYYgEe2k7LYndSsmlw" name="approved" type="BOOLEAN" createMode="false"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_NbXYMIYyEe2k7LYndSsmlw" name="candidateRegistrationRequestReviewInput" type="COMPLEX" dataReference="candidateRegistrationRequest" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_NbXYMYYyEe2k7LYndSsmlw" name="approved" type="BOOLEAN" createMode="false"/>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_2TjYbHV4Ee25lfJWSkzKNQ" name="dueDateCalculation()" content="Date currentDate = new Date();&#xD;&#xA;Calendar c = Calendar.getInstance();&#xD;&#xA;c.setTime(currentDate);&#xD;&#xA;c.add(Calendar.DATE, 7);&#xD;&#xA;&#xD;&#xA;Date currentDatePlusSeven = c.getTime().plus(4);&#xD;&#xA;apiAccessor.processAPI.updateDueDateOfTask(activityInstanceId,currentDatePlusSeven);&#xD;&#xA;return currentDatePlusSeven.getTime()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long" returnTypeFixed="true">
@@ -294,8 +332,11 @@
       <data xmi:type="process:BusinessObjectData" xmi:id="_gCXGIIX-Ee2k7LYndSsmlw" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest">
         <defaultValue xmi:type="expression:Expression" xmi:id="_gCXGIYX-Ee2k7LYndSsmlw" name="" content=""/>
       </data>
+      <data xmi:type="process:Data" xmi:id="_cfVnUIYqEe2k7LYndSsmlw" name="answers" multiple="true" dataType="_GYwzfHV3Ee25lfJWSkzKNQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_cfWOYIYqEe2k7LYndSsmlw" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_GYwzZHV3Ee25lfJWSkzKNQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="__Kf4cYYiEe2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_OL3rQYY2Ee2k7LYndSsmlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_GYwzZnV3Ee25lfJWSkzKNQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_r1fFEIUxEe2eCYRppRVQig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
