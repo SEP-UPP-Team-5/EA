@@ -985,10 +985,5 @@
       <roleName>Guest</roleName>
       <groupName>Guest</groupName>
     </membership>
-    <membership>
-      <userName>User1</userName>
-      <roleName>Guest</roleName>
-      <groupName>Guest</groupName>
-    </membership>
   </memberships>
 </organization:Organization>
