@@ -57,6 +57,9 @@
                 <field type="STRING" length="255" name="letterFile" nullable="true" collection="false"/>
                 <field type="BOOLEAN" length="255" name="premiumService" nullable="true" collection="false"/>
                 <field type="BOOLEAN" length="255" name="approved" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="numberOfReview" nullable="true" collection="false">
+                    <description></description>
+                </field>
             </fields>
             <uniqueConstraints/>
             <queries/>
