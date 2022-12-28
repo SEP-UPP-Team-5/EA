@@ -173,10 +173,9 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.Interview">
             <fields>
-                <field type="STRING" length="255" name="id" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Candidate" fetchType="LAZY" name="candidate" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.CompanyEmpoyee" fetchType="LAZY" name="employees" nullable="true" collection="true"/>
-                <relationField type="AGGREGATION" reference="com.company.model.AgencyEmployee" fetchType="LAZY" name="agencyEmployee" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="candidate" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="employees" nullable="true" collection="true"/>
+                <field type="INTEGER" length="255" name="agencyEmployee" nullable="true" collection="false"/>
                 <field type="OFFSETDATETIME" length="255" name="listOfTerms" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
@@ -185,9 +184,8 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.InterviewResult">
             <fields>
-                <field type="STRING" length="255" name="id" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Interview" fetchType="LAZY" name="interview" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.CompanyEmpoyee" fetchType="LAZY" name="employee" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="employee" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="personalEstimate" nullable="false" collection="false"/>
                 <field type="INTEGER" length="255" name="mark" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="personalImpression" nullable="false" collection="false"/>
@@ -201,6 +199,7 @@
             <fields>
                 <field type="INTEGER" length="255" name="agencyEmployeeId" nullable="true" collection="false"/>
                 <field type="LONG" length="255" name="companies" nullable="true" collection="true"/>
+                <field type="INTEGER" length="255" name="candidateId" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
