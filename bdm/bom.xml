@@ -94,11 +94,17 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.CompanyRegistrationRequest">
             <fields>
-                <field type="STRING" length="255" name="id" nullable="true" collection="false"/>
-                <relationField type="COMPOSITION" reference="com.company.model.Company" fetchType="LAZY" name="company" nullable="false" collection="false"/>
-                <field type="OFFSETDATETIME" length="255" name="timeOfCreation" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.AgencyEmployee" fetchType="LAZY" name="employeeForeReview" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="reviewerUsername" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="rejectionReason" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="name" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="username" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="password" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="address" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="pib" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="foundingDate" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telephoneNumber" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="approved" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "pokusaj2",
   "name" : "pokusaj2",
-  "lastUpdate" : 1672230288151,
+  "lastUpdate" : 1672231882795,
   "rows" : [
     [
       {
@@ -341,55 +341,6 @@
                         }
                       },
                       "reference" : "7d6a7c19-b5b7-4cee-b7d5-c4af5d364af7",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!candidateRegistrationRequest.password"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Password"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "{{candidateRegistrationRequest.password}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "f2425e61-a2fa-4ab7-aab0-f4f3bc0cf1ca",
                       "hasValidationError" : false,
                       "id" : "pbText",
                       "description" : ""

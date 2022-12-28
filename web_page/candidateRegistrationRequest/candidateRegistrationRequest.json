@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "candidateRegistrationRequest",
   "name" : "candidateRegistrationRequest",
-  "lastUpdate" : 1672160258911,
+  "lastUpdate" : 1672231864634,
   "rows" : [
     [
       {
@@ -433,7 +433,7 @@
                         },
                         "type" : {
                           "type" : "constant",
-                          "value" : "text"
+                          "value" : "password"
                         },
                         "dimension" : {
                           "type" : "constant",
@@ -446,6 +446,28 @@
                         "required" : {
                           "type" : "constant",
                           "value" : false
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
                         }
                       },
                       "reference" : "34afc169-99ff-43d3-b7d7-fe296de7085c",
