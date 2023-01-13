@@ -140,7 +140,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_GYwzXnV3Ee25lfJWSkzKNQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_GYwzX3V3Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_GYwzYHV3Ee25lfJWSkzKNQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_nfJAwIX-Ee2k7LYndSsmlw" name="candidateRegistrationRequest" content="e4fba270-9472-4219-876c-92b4bd7789a4" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_nfJAwIX-Ee2k7LYndSsmlw" name="canRegRequest" content="0c1d84ba-d552-44cc-86af-da20c44cf18b" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <filters xmi:type="process:ActorFilter" xmi:id="_6Try8IYAEe2k7LYndSsmlw" name="initiator filter" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_6Try8YYAEe2k7LYndSsmlw" definitionId="bonita-actorfilter-initiator" version="1.0">
@@ -205,7 +205,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_JU4M6HV8Ee25lfJWSkzKNQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_JU4M53V8Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_UAnW2nV8Ee25lfJWSkzKNQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_sGFC4JM0Ee24pNu_i56sLQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_j5IHMJNCEe2ZjfkEZCUq-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_UAnW2XV8Ee25lfJWSkzKNQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_UAnW3HV8Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -658,7 +658,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_K7W28YadEe25jsTVyB7eGA" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_GYwzZHV3Ee25lfJWSkzKNQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_sGFC4ZM0Ee24pNu_i56sLQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_j5IHMZNCEe2ZjfkEZCUq-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_GYwzZnV3Ee25lfJWSkzKNQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_r1fFEIUxEe2eCYRppRVQig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -748,7 +748,7 @@
         <url xmi:type="expression:Expression" xmi:id="__nsM4pMqEe24pNu_i56sLQ" name="" content="" returnTypeFixed="true"/>
         <initialMultipleContent xmi:type="expression:Expression" xmi:id="__nsM45MqEe24pNu_i56sLQ" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
       </documents>
-      <documents xmi:type="process:Document" xmi:id="_Bx8d8JMrEe24pNu_i56sLQ" name="templateCv" defaultValueIdOfDocumentStore="cvTemplate (2) (1).docx" documentType="INTERNAL">
+      <documents xmi:type="process:Document" xmi:id="_Bx8d8JMrEe24pNu_i56sLQ" name="templateCv" defaultValueIdOfDocumentStore="cvTemplate.docx" documentType="INTERNAL">
         <mimeType xmi:type="expression:Expression" xmi:id="_Bx8d8ZMrEe24pNu_i56sLQ" name="" content="" returnTypeFixed="true"/>
         <url xmi:type="expression:Expression" xmi:id="_Bx8d8pMrEe24pNu_i56sLQ" name="" content="" returnTypeFixed="true"/>
         <initialMultipleContent xmi:type="expression:Expression" xmi:id="_Bx8d85MrEe24pNu_i56sLQ" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
