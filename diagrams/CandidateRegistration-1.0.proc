@@ -205,7 +205,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_JU4M6HV8Ee25lfJWSkzKNQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_JU4M53V8Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_UAnW2nV8Ee25lfJWSkzKNQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_j5IHMJNCEe2ZjfkEZCUq-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_on2XwJNQEe2ZjfkEZCUq-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_UAnW2XV8Ee25lfJWSkzKNQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_UAnW3HV8Ee25lfJWSkzKNQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -251,6 +251,37 @@
               <operator xmi:type="expression:Operator" xmi:id="_WBK69pMsEe24pNu_i56sLQ" type="DOCUMENT_CREATE_UPDATE"/>
             </outputs>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_Hz2AEJNZEe2ZjfkEZCUq-Q" name="generateLetter" definitionId="document-templating" event="ON_ENTER" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_Hz2AEZNZEe2ZjfkEZCUq-Q" definitionId="document-templating" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Hz2AEpNZEe2ZjfkEZCUq-Q" key="documentInput">
+                <expression xmi:type="expression:Expression" xmi:id="_Hz2AE5NZEe2ZjfkEZCUq-Q" name="templateLetter" content="templateLetter" type="DOCUMENT_REF_TYPE" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:Document" xmi:id="_Hz2AFJNZEe2ZjfkEZCUq-Q" name="templateLetter"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Hz2AFZNZEe2ZjfkEZCUq-Q" key="replacements">
+                <expression xmi:type="expression:TableExpression" xmi:id="_Hz2AFpNZEe2ZjfkEZCUq-Q">
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_Hz2AF5NZEe2ZjfkEZCUq-Q">
+                    <expressions xmi:type="expression:Expression" xmi:id="_Hz2AGJNZEe2ZjfkEZCUq-Q" name="candidateRequest" content="candidateRequest" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_Hz2AGZNZEe2ZjfkEZCUq-Q" name="candidateRegistrationRequest" content="candidateRegistrationRequest" type="TYPE_VARIABLE" returnType="com.company.model.CandidateRegistrationRequest">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Hz2AGpNZEe2ZjfkEZCUq-Q" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest"/>
+                    </expressions>
+                  </expressions>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Hz2AG5NZEe2ZjfkEZCUq-Q" key="outputFileName">
+                <expression xmi:type="expression:Expression" xmi:id="_Hz2AHJNZEe2ZjfkEZCUq-Q" name="letter.docx" content="letter.docx" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_Hz2AHZNZEe2ZjfkEZCUq-Q">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_Hz2AHpNZEe2ZjfkEZCUq-Q" name="generatedLetter" content="generatedLetter" type="DOCUMENT_REF_TYPE">
+                <referencedElements xmi:type="process:Document" xmi:id="_Hz2AH5NZEe2ZjfkEZCUq-Q" name="generatedLetter"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_Hz2AIJNZEe2ZjfkEZCUq-Q" name="document" content="document" type="CONNECTOR_OUTPUT_TYPE" returnType="org.bonitasoft.engine.bpm.document.DocumentValue">
+                <referencedElements xmi:type="definition:Output" xmi:id="_Hz2AIZNZEe2ZjfkEZCUq-Q" name="document" type="org.bonitasoft.engine.bpm.document.DocumentValue"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_Hz2AIpNZEe2ZjfkEZCUq-Q" type="DOCUMENT_CREATE_UPDATE"/>
+            </outputs>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_xVLUE5MrEe24pNu_i56sLQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_xVLUFJMrEe24pNu_i56sLQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_xVLUFZMrEe24pNu_i56sLQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -283,6 +314,30 @@
                 <referencedElements xmi:type="definition:Output" xmi:id="_hCYJHpMtEe24pNu_i56sLQ" name="result" type="java.lang.Object"/>
               </rightOperand>
               <operator xmi:type="expression:Operator" xmi:id="_hCYJH5MtEe24pNu_i56sLQ" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_Q0cd4JNZEe2ZjfkEZCUq-Q" name="saveLetter" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_Q0cd4ZNZEe2ZjfkEZCUq-Q" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Q0cd4pNZEe2ZjfkEZCUq-Q" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_Q0cd45NZEe2ZjfkEZCUq-Q" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Q0cd5JNZEe2ZjfkEZCUq-Q" key="variables">
+                <expression xmi:type="expression:Expression" xmi:id="_Q0cd5ZNZEe2ZjfkEZCUq-Q" returnType="java.util.List" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Q0cd5pNZEe2ZjfkEZCUq-Q" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_Q0cd55NZEe2ZjfkEZCUq-Q" name="newScript()" content="import java.io.File;&#xD;&#xA;import java.io.FileNotFoundException;&#xD;&#xA;import java.io.FileOutputStream;&#xD;&#xA;import java.io.IOException;&#xD;&#xA;import java.io.OutputStream;&#xD;&#xA;import java.time.LocalDateTime;&#xD;&#xA;import java.time.temporal.ChronoUnit;&#xD;&#xA;&#xD;&#xA;byte[] dataCv = apiAccessor.getProcessAPI().getDocumentContent(generatedCv.getId().toString());&#xD;&#xA;OutputStream outCv;&#xD;&#xA;try {&#xD;&#xA;&#x9;outCv = new FileOutputStream(new File(&quot;workspace\\EAA\\documents\\&quot; + candidateRegistrationRequest.username + &quot;-generated-Letter.docx&quot;));&#xD;&#xA;&#x9;outCv.write(dataCv);&#xD;&#xA;&#x9;outCv.close();&#xD;&#xA;&#xD;&#xA;} catch (FileNotFoundException e) {&#xD;&#xA;&#x9;// TODO Auto-generated catch block&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Q0cd6JNZEe2ZjfkEZCUq-Q" name="candidateRegistrationRequest" dataType="_GYwzhHV3Ee25lfJWSkzKNQ" className="com.company.model.CandidateRegistrationRequest"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q0cd6ZNZEe2ZjfkEZCUq-Q" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="process:Document" xmi:id="_Q0cd6pNZEe2ZjfkEZCUq-Q" name="generatedCv"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_Q0cd65NZEe2ZjfkEZCUq-Q">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_Q0cd7JNZEe2ZjfkEZCUq-Q"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_Q0cd7ZNZEe2ZjfkEZCUq-Q" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_Q0cd7pNZEe2ZjfkEZCUq-Q" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_Q0cd75NZEe2ZjfkEZCUq-Q" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_cierw5MsEe24pNu_i56sLQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -658,7 +713,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_K7W28YadEe25jsTVyB7eGA" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_GYwzZHV3Ee25lfJWSkzKNQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_j5IHMZNCEe2ZjfkEZCUq-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_on2XwZNQEe2ZjfkEZCUq-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_GYwzZnV3Ee25lfJWSkzKNQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_r1fFEIUxEe2eCYRppRVQig" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -752,6 +807,16 @@
         <mimeType xmi:type="expression:Expression" xmi:id="_Bx8d8ZMrEe24pNu_i56sLQ" name="" content="" returnTypeFixed="true"/>
         <url xmi:type="expression:Expression" xmi:id="_Bx8d8pMrEe24pNu_i56sLQ" name="" content="" returnTypeFixed="true"/>
         <initialMultipleContent xmi:type="expression:Expression" xmi:id="_Bx8d85MrEe24pNu_i56sLQ" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
+      </documents>
+      <documents xmi:type="process:Document" xmi:id="_6KWrkJNYEe2ZjfkEZCUq-Q" name="generatedLetter">
+        <mimeType xmi:type="expression:Expression" xmi:id="_6KWrkZNYEe2ZjfkEZCUq-Q" name="" content="" returnTypeFixed="true"/>
+        <url xmi:type="expression:Expression" xmi:id="_6KWrkpNYEe2ZjfkEZCUq-Q" name="" content="" returnTypeFixed="true"/>
+        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_6KWrk5NYEe2ZjfkEZCUq-Q" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
+      </documents>
+      <documents xmi:type="process:Document" xmi:id="_-kFr8JNYEe2ZjfkEZCUq-Q" name="templateLetter" defaultValueIdOfDocumentStore="cvTemplate.docx" documentType="INTERNAL">
+        <mimeType xmi:type="expression:Expression" xmi:id="_-kFr8ZNYEe2ZjfkEZCUq-Q" name="" content="" returnTypeFixed="true"/>
+        <url xmi:type="expression:Expression" xmi:id="_-kFr8pNYEe2ZjfkEZCUq-Q" name="" content="" returnTypeFixed="true"/>
+        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_-kFr85NYEe2ZjfkEZCUq-Q" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
       </documents>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_GYwzbXV3Ee25lfJWSkzKNQ">
         <name xmi:type="expression:Expression" xmi:id="_GYwzbnV3Ee25lfJWSkzKNQ" content="" returnTypeFixed="true"/>
