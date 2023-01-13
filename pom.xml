@@ -134,6 +134,11 @@
       <version>1.4.199</version>
     </dependency>
     <dependency>
+      <groupId>org.bonitasoft.connectors</groupId>
+      <artifactId>bonita-connector-document-templating</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
       <groupId>com.company.model</groupId>
       <artifactId>bdm-client</artifactId>
       <version>1.0.0</version>
